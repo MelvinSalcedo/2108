@@ -1,0 +1,80 @@
+{% extends 'base/newbase.html' %}
+
+
+{%block header%}
+  <header id = "header">
+
+  	<div class = "container">
+  		<div id = "logo" class = "pull-left">
+  			<a href="{% url 'login:User_index_view' %}"><img src="/static/img/logos12.png" alt="" title="" /></img></a>
+  		</div>
+  		<nav id="nav-menu-container">
+			<ul class="nav-menu">
+				<li class="" ><a href="{% url 'login:User_index_view' %}"> Home </a> </li>	
+
+				
+				<li class="" ><a href="#">{{user.first_name}}</a> </li>	
+
+
+				<li><a href="#team"> Perfil  </a> </li>
+			
+<!--				<li>
+					<a href="{% url 'login:logout' %}" data-dismiss="modal" aria-hidden="true" data-toggle="modal" >Cerrar</a>
+				</li>-->
+
+				<li class="nav-item dropdown"><a href="#" >Option</a>
+		            <ul >
+		              <li><a href="#"><i class="fa fa-folder-open-o"></i>&nbsp Record</a></li>
+		              <li><a href="#"><i class="fa fa-address-book"></i> &nbsp Profile</a></li>
+		              <li><a href="{% url 'login:logout' %}" data-dismiss="modal" aria-hidden="true" data-toggle="modal"> <i class="fa fa-times"></i>  &nbsp Logout</a></li>
+		
+		            </ul>
+		        </li>	
+			</ul>
+  		</nav>
+  	</div>
+
+ </header>
+{% endblock %}
+{%block content%}
+{%endblock%}
+{% block portafolio %}
+<section id="portfolio">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+        	<br>
+        	<br>
+          <h3 class="section-title">Historial  {{labels}}</h3>
+          <p class="section-description"></p>
+        </div>
+        <table class="table">
+			<thead>
+				<td>#</td>
+				<td>Nombre de lugar turistico</td>
+				<td>Fecha</td>
+			</thead>
+			<tbody>
+				{% if objetos %}
+				{% for user2 in objetos %}
+				<tr>
+					<td>{{user2.id}}</td>
+					<td>{{user2.ImagenInfo.nombreimagen}}</td>
+					<td>{{user2.Register_date}}</td>	
+
+					<td>
+						<a class="btn btn-outline-secondary" href="{% url 'login:informacion' user2.ImagenInfo.idimagen %}">Info</a>
+
+					</td>									
+
+				</tr>
+				{% endfor%}
+				{%endif%}
+			</tbody>
+		</table>
+
+		
+	
+
+      </div> 
+    </section>
+{% endblock %}

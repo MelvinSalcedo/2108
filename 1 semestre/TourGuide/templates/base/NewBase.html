@@ -1,0 +1,98 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> {% block title %}TourGuide {% endblock%} </title>
+
+	<link href='/static/img/miniogo.png' rel="icon">
+	<link rel="stylesheet" href="{% static 'css/newcss/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/styles1.css'%}">
+	<link rel="stylesheet" href="{% static 'css/elegant-icons-style.css'%}">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+	<link rel="stylesheet" href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" >
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+<!--==========================
+  Header
+============================-->
+{% block header %}
+  <header id = "header">
+
+  	<div class = "container">
+  		<div id = "logo" class = "pull-left">
+  			<a href="#hero"><img src="/static/img/logos12.png" alt="" title="" /></img></a>
+  		</div>
+  		<nav id="nav-menu-container">
+			<ul class="nav-menu">
+				<li class="menu-active" ><a href="#home"> Home </a> </li>	
+				<li><a href="#team"> Team </a> </li>
+				<li><a href="{% url 'login:register' %}"> Register </a></li>
+				<li>
+					<a href="{% url 'login:login' %}" data-dismiss="modal" aria-hidden="true" data-toggle="modal" >Login</a>
+				</li>
+			</ul>
+  		</nav>
+  	</div>
+
+ </header>
+ {% endblock %}
+
+
+<!--==========================
+    Hero Section
+============================-->
+
+
+{% block content %}
+	<section id = "hero">
+		<div class="hero-container">
+			<h1>Welcome to Tour Guide</h1>
+			<h2>Analyze your favorite images</h2>
+			<a href="#about" class="btn-get-started">Get Started</a>
+		</div>	
+	</section>	
+{% endblock %}
+
+
+<main id="main">
+{%block lol%}
+
+
+{%endblock%}
+
+{% block services %}
+{% endblock %}
+{% block portafolio %}
+{% endblock %}
+</main>
+
+
+<script src="{% static 'js/jquery/jquery-migrate.min.js' %}"></script>
+<script src="{% static 'js/jquery/superfish.min.js' %}"></script>
+<script src="{% static 'js/jquery/wow.min.js' %}"></script>
+<script src="{% static 'js/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery/contactform.js' %}"></script>
+<script src="{% static 'js/jquery/main.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+
+
+
+
+
+
+</body>
+
+</html>

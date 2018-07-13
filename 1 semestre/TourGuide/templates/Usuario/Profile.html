@@ -1,0 +1,91 @@
+{% extends 'base/newbase.html' %}
+
+
+{%block header%}
+  <header id = "header">
+
+  	<div class = "container">
+  		<div id = "logo" class = "pull-left">
+  			<a href="{% url 'login:index' %}"><img src="/static/img/logos12.png" alt="" title="" /></img></a>
+  		</div>
+  		<nav id="nav-menu-container">
+			<ul class="nav-menu">
+				<li class="" ><a href="{% url 'login:User_index_view' %}"> Home </a> </li>
+				<li class="" ><a href="">{{user.first_name}}</a> </li>	
+				<li class="nav-item dropdown"><a href="" >Drop Down</a>
+		            <ul >
+		              <li><a href="{% url 'login:Historial' %}"><i class="fa fa-folder-open-o"></i>&nbsp Record</a></li>
+		              <li><a href="#"><i class="fa fa-address-book"></i> &nbsp Profile</a></li>
+		              <li><a href="{% url 'login:logout' %}" data-dismiss="modal" aria-hidden="true" data-toggle="modal"> <i class="fa fa-times"></i>  &nbsp Logout</a></li>
+		
+		            </ul>
+		        </li>
+
+  		</nav>
+  	</div>
+
+ </header>
+{% endblock %}
+{%block content%}
+
+
+{%endblock%}
+
+{% block services %}
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="contact">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h3 class="section-title">Profile</h3>
+
+        </div>
+      </div>
+      <br>	
+      <br>	
+      <div class="container wow fadeInUp">
+        <div class="row justify-content-center">
+
+          <div class="col-lg-3 col-md-4">
+
+            <div class="info">
+              <div>
+                <i class="fa fa-child"></i>
+                <p>{{user.first_name}} <br> {{user.last_name}}</p>
+              </div>
+              <div>
+                <i class="fa fa-envelope"></i>
+                <p>{{user.email}}</p>
+              </div>
+              <div>
+                <i class="fa fa-user"></i>
+                <p>{{user.username}}</p>
+              </div>
+               <div>
+                <i class="fa fa-calendar"></i>
+                <p>{{user.date_joined}}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #contact -->
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block portafolio %}
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "melvin-205714",
+  "private_key_id": "afa24119e798de310c29877ff038387b3437886a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCnK41qbXmxerLK\nR7q5P+NkMuEow6lnzhDLDsFbKhKptuEXI/B6oqaFKyLNJOBPaloMoL/aHQ2aabS3\n1Ew/TW1eO0stEGNQjJVVVc/J23oomVJ3j/zBO9qAkErTAaGCoPcjE5hWzMfkEmjD\nqg+bTiSvZ3pIF3Eh9klSD/iIafZ7etg1TAPOAUwaqVlynKt3kFUtPC3Iz5Uolfoz\nM4/ydlEhE6E0mSNIzTftqJtman1M4jAapMy+uWFGAuF2oUo3QNymE76SbgcHj9aB\n1RDCzWpCLnOvF/tnWvvJRf6XV/6x6jE59V2cGCn+r80LlGzjJNNeXSAe5qNrAkJu\nWNUUO17lAgMBAAECggEAAyPXSSt7QLEsUI5eXIJttAEcp5ZdRTzipd3GFf9JUHTF\n75hWOQd7Fz9DLRVHPVajEF+omuE20zKvGVDcicfbiQyWEeef5fBuEadF+uWrer2+\nhc5nkf2c0hNjxGjgbsK1QaxpjR/VlVwfKaW1G1axa7YG3vnJvziQEgGIyo8q+RDC\n3y2TgCkgyBGsl3U+5YlEsvhQmbS1PR0J70yzSBxTq6n6DNEo+Q0FAntkHF2glBWh\n7SlVaFkur5h8ULWSxEEWH67LIMRVYdepdXwSGZ14CJRUUwrKbmMkYjxwMHiIar3a\nk6rRe7oU/g/VO9MQpi7oudHiyU29jkeX/lI2bnqtoQKBgQDR14HFczJ3LqZPMbgO\nzby4wLjkp+0KczRjf23l+iGvl2k/8au4ZDeqb5czyV8spqbara8fT6tyjlbdDr7E\ngRugMHN+1Ju8YONr9L0yDzaL76f0F1kAurZu64ZfK11XX+IiK/vcqQUsUwZ27HxI\ndbwRhT6dUmSh3t2aElxWwoPT3QKBgQDL8SQmSTVeV9lPeh26PTyVGH5iSZTGo3BY\nCRytwK2vDqA/0pWzoqmBHlKUyqRizUjZUNSzh+MV3DzGzw6C1f56EF29pjnTPq8O\nmhWrMUmUfHVB9YMyKbdQepaQ4iii5Wtl37mg3LRtUNGekCm4cakJPDB6O6hM0zwZ\ntz0DRTdqqQKBgG+w+KbjORJM50Kx4RkoEvJ3yjIS2827IkBvfExzxehTfDcH6HH+\nDc8PFHkBD0KR9a/h0Jum6UfRUZTaG1o2qkCqaV8xxS8QlxxIKUfy5wK27juzDbGg\nsCf7/wq65zTxmUi9BpMd993u1zsHhuN+nzroJDrStzOdj3BJo5KeeFKVAoGAJ3Io\nz87xJ6JOQfUYsuENSrlGGLSqthD+tchtZ54Q+f8WN8H/epNHvdWjm2vmh8W1BXOA\n8Iij/6JtjvaVk/DYG7v2pav1G0rQiT58WnRaCwJXm75k9drjvgk3/iYAPiGpuDah\nrN+DdnFfWhAAQdCaJVMi/UF0uAdTZJXwkyVcJqECgYBpPQAqSwt+aIIi6hMnXLWT\nTMVj1tZvi3yW4GhrdBcQVtTWC92ufnq5DGbMxUPJpRxrN6+OlP4B+rjC3pdg5Ndy\ndZYXNyzrT25nmk+hz53qpqH5EA6U3DsLWmWDdcqyt+hrgAwoCWlL/hJI9KbLxkh8\nnMB7buCPP12MkcYMgYlVdA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "mlevinsalcedo@melvin-205714.iam.gserviceaccount.com",
+  "client_id": "107049303352511897095",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mlevinsalcedo%40melvin-205714.iam.gserviceaccount.com"
+}

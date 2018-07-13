@@ -1,0 +1,79 @@
+{% extends 'base/newbase.html' %}
+
+
+{%block header%}
+  <header id = "header">
+
+  	<div class = "container">
+  		<div id = "logo" class = "pull-left">
+  			<a href="{% url 'login:index' %}"><img src="/static/img/logos12.png" alt="" title="" /></img></a>
+  		</div>
+  		<nav id="nav-menu-container">
+			<ul class="nav-menu">
+				<li class="" ><a href="{% url 'login:User_index_view' %}"> Home </a> </li>
+                <li>
+          <a href="{% url 'login:login' %}" data-dismiss="modal" aria-hidden="true" data-toggle="modal" >Login</a>
+        </li>
+  		</nav>
+  	</div>
+
+ </header>
+{% endblock %}
+
+
+{% block lol %}
+
+    <section id="contact">
+      <div class="">
+
+        <div class="container wow fadeInUp">
+            <div class="section-header">
+                <h3 class="section-title">Registro </h3>
+                <br>
+                <div class="container" >
+            <br>
+        
+            </div>
+            </div>
+          </div>
+        <div class="">
+         <div class="">
+            <div class="center">
+              <div class="col-lg-5 col-md-8">
+                  <div class="form">            
+                      <div class="form-group">
+                        <form  method="POST" > {% csrf_token %} 
+                          {{form.as_p}}
+                          <center><button type="submit" class="btn btn-primary">Ingresar</button></center>
+                      </form>
+                      </div>
+                     
+                  </div>
+              </div>
+            </div>  
+        </div>
+      </div>
+
+      </div>
+
+    </section>
+
+{% endblock %}
+{%block content%}
+
+
+{%endblock%}
+
+{% block services %}
+
+
+
+
+
+{% endblock %}
+
+
+{% block portafolio %}
+
+
+{% endblock %}

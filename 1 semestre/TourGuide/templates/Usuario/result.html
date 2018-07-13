@@ -1,0 +1,193 @@
+{% extends 'base/newbase.html' %}
+
+
+{%block header%}
+  <header id = "header">
+
+  	<div class = "container">
+  		<div id = "logo" class = "pull-left">
+  			<a href="{% url 'login:User_index_view' %}"><img src="/static/img/logos12.png" alt="" title="" /></img></a>
+  		</div>
+  		<nav id="nav-menu-container">
+			<ul class="nav-menu">
+				<li class="" ><a href="{% url 'login:User_index_view' %}"> Home </a> </li>	
+
+				
+				<li class="" ><a href="#">{{user.first_name}}</a> </li>	
+
+				<li class="nav-item dropdown"><a href="#" >Option</a>
+		            <ul >
+		              <li><a href="{% url 'login:Historial' %}"><i class="fa fa-folder-open-o"></i>&nbsp Record</a></li>
+		              <li><a href="#"><i class="fa fa-address-book"></i> &nbsp Profile</a></li>
+		              <li><a href="{% url 'login:logout' %}" data-dismiss="modal" aria-hidden="true" data-toggle="modal"> <i class="fa fa-times"></i>  &nbsp Logout</a></li>
+		
+		            </ul>
+		        </li>	
+			</ul>
+  		</nav>
+  	</div>
+
+ </header>
+{% endblock %}
+{%block content%}
+{%endblock%}
+{% block portafolio %}
+<section id="portfolio">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+        	<br>
+        	<br>
+          <h3 class="section-title">Imformation {{labels}}</h3>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+        <div class="row">
+
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              
+              <li data-filter=".filter-app"><i class="fa fa-database"></i> &nbsp App</li>
+              <li data-filter=".filter-card"><i class="	fa fa-newspaper-o"></i>&nbsp Json</li>
+              <li data-filter=".filter-web"><i class="fa fa-paper-plane"></i>&nbspWeb</li>
+              <li data-filter=".filter-Map"><i class="fa fa-map-marker"></i>&nbsp Map</li>
+            </ul>
+          </div>
+        </div>	
+		
+		<div class="row" id="">        
+          <div class=" portfolio-item filter-app">
+          
+				{% if informacion %}
+				<table class="table table-striped table-advance table-hover ">
+					<tbody>
+						<tr>
+							<th> Tipe &nbsp &nbsp</th>
+							<th> Information </th>
+						</tr>
+						{% for token2 in informacion %}
+						<tr>
+							<td>Nombre  :</td>
+							<td>{{token2.nombreimagen}}</td>
+						</tr>
+						<tr>
+							<td>Ciudad :</td>
+							<td>{{token2.ciudad}}</td>
+						</tr>
+						<tr>
+							
+							<td>Provincia :</td>
+							<td>{{token2.provincia}}</td>
+						</tr>
+						<tr>
+							<td>Distrito :</td>
+							<td>{{token2.distrito}}</td>
+						</tr>
+						<tr>
+							<td>Direccion :</td>
+							<td>{{token2.direccion}}</td>
+						</tr>
+						<tr>
+							<td>Longitud :</td>
+							<td>{{token2.longitud}}</td>
+						</tr>
+						<tr>
+							<td>Latitud :</td>
+							<td>{{token2.latitud}}</td>
+						</tr>
+						<tr>
+							<td>Descripcion :</td>
+							<td>{{token2.description}}</td>
+						</tr>
+						<tr>
+							<td>Construccion :</td>
+							<td>{{token2.construccion}}</td>
+						</tr>
+						<tr>
+							<td>Estilo  :</td>
+							<td>{{token2.estilo_arquitectonico}}</td>
+						</tr>
+						
+				{% endfor %}
+		
+					</tbody>
+
+				</table>
+				{% endif %}
+                   
+          </div>
+
+          <div class=" portfolio-item filter-web">
+
+				{% if image  %}
+				<br>	
+				<center>	<h4>Pages with matching images  found:  </h4></center>
+				{% endif %}
+				<table class="table ">
+					<tbody >
+						{% for token in image.pages_with_matching_images %}
+						<tr >
+							<td><a href="{{token.url}}" target="_blank">{{token.url}}</a></td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>				
+          </div>
+         <div class=" portfolio-item filter-card">
+				{% if image  %}
+				<br>	
+				<center><h4>Result Json   :</h4></center>
+				{% endif %}
+				<table class="table table-striped table-advance table-hover ">
+					<tbody>
+						<tr>
+							<th> Description</th>
+							<th>Score</th>
+						</tr>
+
+						{% for token in image.web_entities %}
+						<tr >
+							<td>{{token.description}}</td>
+							<td>{{token.score}}</td>
+						</tr>
+
+						{% endfor %}
+					</tbody>
+				</table>
+          </div>
+
+         <div style="margin: auto; width: 600%">
+         <div class=" portfolio-item filter-Map">
+
+         	<br>
+         		<center><h4><i class="fa fa-map-marker"></i> &nbsp Map</h4></center>
+				{% for token2 in informacion %}
+	         	<div id="googleMap" style="width:100%;height:600px"></div>
+				<script>
+
+				var lat= Number.parseFloat("{{token2.longitud}}") ;
+		    	var lon= Number.parseFloat("{{token2.latitud}}");
+		    	consolo.log(lat);
+				function myMap() {
+
+				var mapProp= {
+				    center:new google.maps.LatLng(lon,lat),
+				    zoom:15,
+				};
+				var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+				}
+				</script>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM4omgjzKMYAzu8ZLX0UrA71FLBkMgGLE&callback=myMap"></script>
+
+				{%endfor%}
+			
+         </div>
+ 
+
+         </div>
+
+
+
+        </div>
+      </div> 
+    </section>
+
+{% endblock %}

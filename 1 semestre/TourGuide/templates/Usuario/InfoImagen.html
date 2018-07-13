@@ -1,0 +1,117 @@
+{% extends 'base/newbase.html' %}
+
+
+{%block header%}
+  <header id = "header">
+
+  	<div class = "container">
+  		<div id = "logo" class = "pull-left">
+  			<a href="{% url 'login:User_index_view' %}"><img src="/static/img/logos12.png" alt="" title="" /></img></a>
+  		</div>
+  		<nav id="nav-menu-container">
+			<ul class="nav-menu">
+				<li class="" ><a href="{% url 'login:User_index_view' %}"> Home </a> </li>	
+
+				
+				<li class="" ><a href="#">{{user.first_name}}</a> </li>	
+
+
+				<li><a href="#team"> Perfil  </a> </li>
+			
+<!--				<li>
+					<a href="{% url 'login:logout' %}" data-dismiss="modal" aria-hidden="true" data-toggle="modal" >Cerrar</a>
+				</li>-->
+
+				<li class="nav-item dropdown"><a href="#" >Option</a>
+		            <ul >
+		              <li><a href="#"><i class="fa fa-folder-open-o"></i>&nbsp Record</a></li>
+		              <li><a href="#"><i class="fa fa-address-book"></i> &nbsp Profile</a></li>
+		              <li><a href="{% url 'login:logout' %}" data-dismiss="modal" aria-hidden="true" data-toggle="modal"> <i class="fa fa-times"></i>  &nbsp Logout</a></li>
+		
+		            </ul>
+		        </li>	
+			</ul>
+  		</nav>
+  	</div>
+
+ </header>
+{% endblock %}
+{%block content%}
+{%endblock%}
+{% block portafolio %}
+
+<section id="portfolio">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+        	<br>
+        	<br>
+          <h3 class="section-title">Imformation {{imagen.nombreimagen}}</h3>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+
+		<div class="row" id="">        
+          <div class=" portfolio-item filter-app">
+          
+				{% if imagen %}
+				<table class="table table-striped table-advance table-hover ">
+					<tbody>
+						<tr>
+							<th> Tipe &nbsp &nbsp</th>
+							<th> Information </th>
+						</tr>
+						
+						<tr>
+							<td>Nombre  :</td>
+							<td>{{imagen.nombreimagen}}</td>
+						</tr>
+						<tr>
+							<td>Ciudad :</td>
+							<td>{{imagen.ciudad}}</td>
+						</tr>
+						<tr>
+							
+							<td>Provincia :</td>
+							<td>{{imagen.provincia}}</td>
+						</tr>
+						<tr>
+							<td>Distrito :</td>
+							<td>{{imagen.distrito}}</td>
+						</tr>
+						<tr>
+							<td>Direccion :</td>
+							<td>{{imagen.direccion}}</td>
+						</tr>
+						<tr>
+							<td>Longitud :</td>
+							<td>{{imagen.longitud}}</td>
+						</tr>
+						<tr>
+							<td>Latitud :</td>
+							<td>{{imagen.latitud}}</td>
+						</tr>
+						<tr>
+							<td>Descripcion :</td>
+							<td>{{imagen.description}}</td>
+						</tr>
+						<tr>
+							<td>Construccion :</td>
+							<td>{{imagen.construccion}}</td>
+						</tr>
+						<tr>
+							<td>Estilo  :</td>
+							<td>{{imagen.estilo_arquitectonico}}</td>
+						</tr>
+		
+					</tbody>
+
+				</table>
+				{% endif %}
+                   
+          </div>
+
+ 
+
+        </div>
+      </div> 
+   </section>
+{% endblock %}

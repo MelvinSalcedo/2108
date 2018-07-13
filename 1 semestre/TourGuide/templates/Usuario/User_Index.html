@@ -1,0 +1,119 @@
+{% extends 'base/newbase.html' %}
+
+
+{%block header%}
+  <header id = "header">
+
+  	<div class = "container">
+  		<div id = "logo" class = "pull-left">
+  			<a href="{% url 'login:index' %}"><img src="/static/img/logos12.png" alt="" title="" /></img></a>
+  		</div>
+  		<nav id="nav-menu-container">
+			<ul class="nav-menu">
+				<li class="" ><a href="{% url 'login:User_index_view' %}"> Home </a> </li>	
+
+
+				
+				<li class="" ><a href="">{{user.first_name}}</a> </li>	
+
+
+
+			
+		<!--		<li>
+					<a href="{% url 'login:logout' %}" data-dismiss="modal" aria-hidden="true" data-toggle="modal" >Cerrar</a>
+				</li>-->
+				<li class="nav-item dropdown"><a href="" >Drop Down</a>
+		            <ul >
+		              <li><a href="{% url 'login:Historial' %}"><i class="fa fa-folder-open-o"></i>&nbsp Record</a></li>
+		              <li><a href="{% url 'login:profile' user.first_name %}"><i class="fa fa-address-book"></i> &nbsp Profile</a></li>
+		              <li><a href="{% url 'login:logout' %}" data-dismiss="modal" aria-hidden="true" data-toggle="modal"> <i class="fa fa-times"></i>  &nbsp Logout</a></li>
+		
+		            </ul>
+		        </li>
+
+  		</nav>
+  	</div>
+
+ </header>
+{% endblock %}
+
+
+{%block content%}
+
+
+{%endblock%}
+
+{% block services %}
+
+    <!--==========================
+      Services Section
+    ============================-->
+
+    <section id="services">
+      <div class="container wow fadeIn">
+      	<br>
+      	<br>
+      	<div class="section-header">
+          	<h3 class="section-title">Image Analyzer</h3>
+
+          	<br>
+          	<p class="section-description">Easily detect large sets of objects in your images, from flowers, animals or means of transport to thousands of other categories of objects that often appear in images.</p>
+        </div>
+		<div class="box">
+			
+			<h4 class="title"><i class="fa fa-camera"></i>&nbsp Add Image</h4>
+		
+		
+			<div class="drag-drop">
+ 				 <form action="{% url 'login:rresult' %}" method='post' enctype="multipart/form-data">{% csrf_token %}
+        		<input type="file"  id="files" name="file1" />	
+        		<br>
+        		<br>
+       			<output id="list"></output>
+
+		        <script>
+		              function archivo(evt) {
+		                  var files = evt.target.files; // FileList object
+		             
+		                  // Obtenemos la imagen del campo "file".
+		                  for (var i = 0, f; f = files[i]; i++) {
+		                    //Solo admitimos imágenes.
+		                    if (!f.type.match('image.*')) {
+		                        continue;
+		                    }
+		             
+		                    var reader = new FileReader();
+		             
+		                    reader.onload = (function(theFile) {
+		                        return function(e) {
+		                          // Insertamos la imagen
+		                         document.getElementById("list").innerHTML = ['<img class="thumb" src="', e.target.result,'" title="', escape(theFile.name), 'WIDTH="400px" HEIGHT="400px" "/>'].join('');
+		                        };
+		                    })(f);
+		             
+		                    reader.readAsDataURL(f);
+		                  }
+		              }
+		             
+		              document.getElementById('files').addEventListener('change', archivo, false);
+		      </script>
+
+			  </div>
+			  <br>
+			
+			 <button type="submit" class="btn btn-outline-secondary">Analyze</button>
+			  
+			  </form>
+
+		</div>
+
+      </div>
+    </section>
+
+{% endblock %}
+
+
+{% block portafolio %}
+
+
+{% endblock %}
